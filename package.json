@@ -1,0 +1,20 @@
+{
+  "name": "extract_exif",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@google-cloud/storage": "^5.7.4",
+    "exif": "^0.6.0",
+    "fs-extra": "^9.1.0",
+    "os": "^0.1.1",
+    "parse-dms": "^0.0.5",
+    "path": "^0.12.7"
+  }
+}
