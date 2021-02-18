@@ -1,9 +1,9 @@
 const path = require('path');
 const fs = requiere('fs-extra');
 const os = require('os');
-const {storage} = require("@google-cloud/storage");
+const {Storage} = require("@google-cloud/storage");
 const ExifImage = require("exif").ExifImage;
-const parsdms = require('parse-dms');
+const parseDMS = require('parse-dms');
 
 exports.extractExIF = async (data, context) => {
     const photo = data;
@@ -12,19 +12,19 @@ exports.extractExIF = async (data, context) => {
 
     //Create a Working Directory
     const workingDir = path.join(os.tmpdir(), 'exif');
-    const tempFilePath = path.join(workingDir, photo.name);
+    const tmpFilePath = path.join(workingDir, photo.name);
     
     //Wait for temp directory
     await fs.ensureDir(workingDir);
     
     //Download file to temp directory
     await imageBucket.file(photo.name).download({
-        destination: tempFilePath
+        destination: tmpFilePath
     });
 
     try{
         //Call Exif Helper Function 
-        getExif(tempFilePath);
+        getExif(tmpFilePath);
 
 
     } catch(error){
@@ -51,5 +51,11 @@ function getExif (tempImage){
 }
 
 function logExif (data) {
-    console.log(data);
+    console.log(data.gps.GPSLatitude[0]);
+    console.log(data.gps.GPSLatitude[1]);
+    console.log(data.gps.GPSLatitude[2]);
+    console.log(data.gps.GPSLongitude[0]);
+    console.log(data.gps.GPSLongitude[1]);
+    console.log(data.gps.GPSLongitude[2]);
+
 }
