@@ -5,7 +5,7 @@ const {Storage} = require("@google-cloud/storage");
 const ExifImage = require("exif").ExifImage;
 const parseDMS = require('parse-dms');
 
-exports.extractExIF = async (data, context) => {
+exports.extractEXIF = async (data, context) => {
     const photo = data;
     const storage = new Storage();
     const imageBucket = storage.bucket(photo.bucket);
