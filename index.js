@@ -64,4 +64,5 @@ function logExif (data) {
 
 function dms_String (deg, min, sec) {
     console.log("Degrees: " + deg + " Minutes: " + min + " Seconds: " + sec);
+    console.log(deg + min /60 + sec /3600);
 }
