@@ -57,5 +57,11 @@ function logExif (data) {
     console.log(data.gps.GPSLongitude[0]);
     console.log(data.gps.GPSLongitude[1]);
     console.log(data.gps.GPSLongitude[2]);
+    dms_String(data.gps.GPSLatitude[0], data.gps.GPSLatitude[1], data.gps.GPSLatitude[2]);
+    dms_String(data.gps.GPSLongitude[0],data.gps.GPSLongitude[1], data.gps.GPSLongitude[2]);
 
+}
+
+function dms_String (deg, min, sec) {
+    console.log("Degrees: " + deg + " Minutes: " + min + " Seconds: " + sec);
 }
