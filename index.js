@@ -51,12 +51,8 @@ function getExif (tempImage){
 }
 
 function logExif (data) {
-    console.log(data.gps.GPSLatitude[0]);
-    console.log(data.gps.GPSLatitude[1]);
-    console.log(data.gps.GPSLatitude[2]);
-    console.log(data.gps.GPSLongitude[0]);
-    console.log(data.gps.GPSLongitude[1]);
-    console.log(data.gps.GPSLongitude[2]);
+    console.log(data.CreateDate);
+    console.log(data);    
     dms_String(data.gps.GPSLatitude[0], data.gps.GPSLatitude[1], data.gps.GPSLatitude[2]);
     dms_String(data.gps.GPSLongitude[0],data.gps.GPSLongitude[1], data.gps.GPSLongitude[2]);
 
