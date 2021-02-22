@@ -1,5 +1,5 @@
 const path = require('path');
-const fs = requiere('fs-extra');
+const fs = require('fs-extra')
 const os = require('os');
 const {Storage} = require("@google-cloud/storage");
 const ExifImage = require("exif").ExifImage;
